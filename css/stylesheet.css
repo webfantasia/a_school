@@ -1,0 +1,550 @@
+@charset "utf-8";
+/* Mobile CSS Document */
+
+body {font-family: 'Noto Sans JP',
+	"Helvetica Neue",
+	Arial,
+	"Hiragino Kaku Gothic ProN",
+	"Hiragino Sans",
+	Meiryo,
+	sans-serif;
+}
+h3, h4, p, a{
+	color: #363636;
+}
+.wrapper {
+	margin: auto;
+	max-width: 370px;
+	height: auto;
+}
+a:link, a:visited, a:hover, a:active {
+	color:#2f2f2f;
+	text-decoration: none;
+}
+/* ヘッダー */
+.header {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 45px;
+	padding-bottom: 10px;
+	background: rgb(255 255 255);
+	z-index: 200;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.menu-pc{
+	display: none;
+}
+.menu-mobile{
+	margin-right: 15px;
+}
+
+#contents {
+	position: relative;
+}
+.mv-message {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	color: #0e0f0c;
+	font-family: "shippori-mincho", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+
+}
+.mv-message h1{
+	font-size: 20px;
+	line-height: 1.5;
+}
+.mv-message h2{
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.site {
+	width: 40%;
+}
+.site img {
+	margin-top: 10px; 
+	margin-left: 50px;
+	width: 200px;
+}
+.mv-message h1{
+	font-size: 16px;
+	color: rgb(255, 254, 254);
+}
+.mv-message h2{
+	font-size: 14px;
+	color: rgb(255, 254, 254);
+}
+.message {
+	background-color: #d7e2ec;
+	margin-top: 0;
+	padding: 10px 15px;
+}
+.message p{
+	font-size: 12px;
+	font-weight: 300;
+}
+
+
+  /* ここから下がハンバーガーメニューに関するCSS */
+
+  /* チェックボックスを非表示にする */
+	.drawer_hidden {
+    display: none;
+    }
+
+  /* ハンバーガーアイコンの設置スペース */
+    .drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+    }
+
+  /* ハンバーガーメニューのアイコン */
+.drawer_open{
+	margin-top: 10px;
+}
+    .drawer_open span,
+    .drawer_open span:before,
+    .drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: rgb(114, 112, 112);
+    transition: 0.5s;
+    position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+    .drawer_open span:before {
+    bottom: 8px;
+}
+
+  /* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+    top: 8px;
+}
+
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+    
+/* メニューのデザイン*/
+.nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: rgba(242, 247, 255, 0.9);
+    transition: .5s;
+}
+
+  /* メニュー黒ポチを消す */ 
+.nav_list {
+    list-style: none;
+	margin-top: 50px;
+}
+.nav_list li{
+	margin-top: 20px;
+	padding-left: 30px;
+}
+/* .nav_list li a{
+	color: #fff;
+} */
+
+  /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked ~ .nav_content {
+    left: 0;/* メニューを画面に入れる */
+}
+
+
+
+/* news */
+#heading h2{	
+	margin-top: 50px;
+	color: #D34F6A;
+	font-size:24px;
+}
+.news dl{
+	display: flex;
+	flex-wrap: wrap;
+	/* align-items: stretch; */
+	width: 100%;
+}
+.news dt{
+	width: 100%;
+		/* border-bottom:1px solid #D34F6A; */
+		float:left;
+		padding:10px 5px;
+		padding-right: 70px;
+	font-size: 14px;
+}
+.news dd{
+	width: 100%;
+	font-size: 14px;
+	font-weight: 300;
+		border-bottom:1px solid #D34F6A;
+		margin-left: 0;
+		padding:10px 5px;
+}	
+.news a{
+		background-color:#59B39B;
+		border-radius:30px;
+		color:#fff;
+		margin:0 20px;
+		padding:5px 15px;
+		text-decoration:none;
+	}
+	
+/* Course */
+#course{
+	padding-top: 100px;
+	margin-top: -100px;
+}
+.post{
+	width: 100%;
+	height: 270px;
+	margin: auto;
+	background-color:#E0EBEF ;
+	border-radius: 20px;
+	margin-bottom:20px ;
+	box-shadow: 8px 6px 25px -5px #d9e6ec;
+}
+.post h3{
+	background-color: #FEF3F2;
+	border-radius: 20px 20px 0 0 ;
+	font-size: 18px;
+	font-weight: 400;
+	padding-top:30px ;
+	padding-bottom: 20px;
+	padding-left: 5px;
+	/* font-family: "shippori-mincho", sans-serif; */
+}
+.post p{
+	font-size: 16px;
+	font-weight: 300;
+	padding: 20px 20px;
+	text-align: left;
+}
+/* photo */
+#photo{
+	padding-top: 100px;
+	margin-top: -100px;
+}
+.photo{
+	width: 100%;
+	background-color: #DCE2DA;
+	border-radius: 10px;
+	padding: 50px 0 20px 10px;
+}
+figure img{
+	width: 300px;
+	height: 200px;
+	object-fit: cover;
+	padding: 10px 30px 10px 30px;
+}
+
+/* 体験レッスン */
+#trial{
+	padding-top: 100px;
+	margin-top: -100px;
+}
+.trial{
+	background-color: #FEF3F2;
+	border-radius: 10px;
+	width: 100%;
+	padding-bottom: 20px;
+}
+article h4{
+	font-size: 16px;
+	line-height: 1.7;
+	padding-top: 40px;
+	padding-left: 10px;
+}
+article p{
+	font-size: 20px;
+	font-weight: 600;
+	text-align: right;
+	padding-right: 40px;
+}
+.btn{
+	width: 90%;
+	height: 90px;
+	background-color:#C73425 ;
+	border-radius: 50px;
+	margin-left: 5%;
+	margin-top: 20px;
+}
+.btn h3{
+	color: #fff;
+	font-size: 26px;
+	text-align: center;
+	padding-top: 20px;
+
+}
+.btn p{
+	font-size: 24px;
+	color: #FAEE00;
+	font-weight: 400;
+	padding-right:20%;
+	padding-bottom: 10px;
+}
+
+/* Access */
+#access{
+	padding-top: 80px;
+	margin-top: -80px;
+}
+.name{
+	color: #585758;
+}
+.name p, a{
+	font-size: 16px;
+	font-weight: 300;
+	text-align: left;
+}
+.access article{
+	display: block;
+	padding-top: 20px;
+}
+.access{
+	margin-bottom: 50px;
+}
+iframe {
+	width: 98%;
+}
+
+/* フッター */
+.footer02 {
+	color: #fff;
+	background: #7EA171;
+	text-align: center;
+	padding: 30px;
+}
+.footer02 a {
+	color: #fff;
+	text-decoration: none;
+}
+.footer02 a:hover {
+	text-decoration: underline;
+}
+.footer02 .menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.footer02 .menu li {
+	font-size: 12px;
+	margin: 0;
+	padding: 0 10px;
+}
+.footer02 .copyright {
+	margin: 0;
+	padding: 20px 0 0 0;
+} 
+.copyright {
+	text-align: center;
+	color: #fff;
+}
+small{
+	font-size: 9px;
+}
+
+
+
+
+
+
+/* PC用のCSS */
+@media screen and (min-width: 900px)
+{
+	.wrapper {
+		margin: auto;
+		max-width: 1000px;
+		height: auto;
+	}
+	.menu-mobile{
+		display: none;
+	}
+	.menu-pc{
+		width: 60%;
+	}
+	input{
+		display: none;
+	}
+	.drawer_open{
+	display: none;
+	}
+	.header {
+		height: 80px;
+	}
+	.site img{
+		height: 75px;
+		width: auto;
+	}
+	.tel {
+		display: none;
+	}
+	.menu-pc {
+		display: flex;
+		justify-content: flex-end;
+	}
+	.fa-ul{
+		display: flex;
+		justify-content:flex-end;
+		margin-right: 2%;
+	}
+	.fa-ul li{
+		font-size: 12px;
+		margin-left: 30px;
+		align-items: center;
+		text-decoration: none;
+	}
+	.fa-ul li a{
+		text-decoration: none;
+		font-size: 18px;
+	}
+	.fa-ul i{
+		padding-right: 7px;
+	}
+	.site img {
+		margin-top: 10px; 
+		margin-left: 100px;
+	}
+	.message p {
+		padding: 20px 10% 10px 100px;
+		font-size: 12pt;
+	}
+	.mv-message {
+		position: absolute;
+		bottom: 15%;
+		right: 5%;
+		color: rgb(255, 254, 254);
+	}
+	.mv-message h1{
+		font-size: 35px;
+		line-height: 1.5;
+	}
+	.mv-message h2{
+		font-size: 25px;
+		line-height: 1.5;
+	}
+	#contents {
+		margin-top: 15px;
+}
+	#contents img{
+		min-width: 100%;
+		height: 80vh;
+		object-fit: cover;
+}
+	#wrapper {
+		margin: auto;
+		max-width: 85%;
+		height: auto;
+	}
+	/* news */
+	#heading h2{
+		font-size: 30px;
+	}
+	.news dl{
+		width:800px;
+		justify-content: right;
+	}
+	.news dt{
+		font-size: 16px;
+		padding:10px 5px;
+		padding-right: 70px;
+	}
+	.news dd{
+		font-size: 16px;
+		padding:10px 5px;
+		margin-left: 100px;
+		}
+
+		/* Course PC */
+	.half{
+		display: flex;
+		justify-content: space-between;
+	}
+	.post{
+		width:30%;
+	}
+	.post:first-child{margin-left: 0;}
+/* photo PC */
+figure img{
+	width: 320px;
+	height: 200px;
+	object-fit: cover;
+	padding: 10px 10px 10px 0;
+}
+
+/* 体験レッスン PC*/
+article h4{
+	padding-left: 80px;
+}
+/* article p{
+	font-size: 20px;
+	font-weight: 600;
+	text-align: right;
+	padding-right: 40px;
+
+} */
+.btn{
+	width: 700px;
+	height: 100px;
+	margin-left: 150px;
+	margin-top: 30px;
+}
+
+
+/* Access */
+.name p{
+	font-weight: 300;
+	text-align: left;
+}
+.access article{
+	display: flex;
+	justify-content: space-between;
+}
+iframe {
+	width: 50%;
+}
+article {
+	align-items: center;
+}
+/* フッター PC*/
+.footer02 .menu li {
+	padding: 0 20px;
+}
+}
